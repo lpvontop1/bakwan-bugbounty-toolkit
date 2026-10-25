@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --c-bg: #f5f4f4;
+    --c-accent: #866f2b;
+    --c-text: #20201d;
+    --c-muted: #88857e;
+    --c-mid: #665b3d;
+    --c-surface: #e8e7e2;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    width: 794px; height: 1123px;
+    background: var(--c-bg);
+    font-family: 'Inter', 'Noto Sans SC', sans-serif;
+    color: var(--c-text);
+    position: relative;
+  }
+  .cover-page { position: absolute; inset: 0; border: none; outline: none; box-shadow: none; }
+
+  /* Layer 1 - background grid (clipped) */
+  .layer1 {
+    position: absolute; inset: 0; overflow: hidden; z-index: 1;
+    background-image:
+      linear-gradient(rgba(102, 91, 61, 0.05) 0.5px, transparent 0.5px),
+      linear-gradient(90deg, rgba(102, 91, 61, 0.05) 0.5px, transparent 0.5px);
+    background-size: 50px 50px;
+  }
+
+  /* Layer 2 - structure */
+  .layer2 { position: absolute; inset: 0; z-index: 2; }
+  .anchor-line {
+    position: absolute;
+    left: 95px; top: 112px;
+    width: 8px; height: 899px;
+    background: var(--c-accent);
+  }
+
+  /* Layer 3 - content */
+  .layer3 { position: absolute; inset: 0; z-index: 3; }
+  .kicker {
+    position: absolute; left: 145px; top: 168px;
+    font-size: 16px; font-weight: 500; letter-spacing: 3px;
+    text-transform: uppercase; color: var(--c-muted);
+    max-width: 560px;
+  }
+  .hero {
+    position: absolute; left: 145px; top: 240px;
+    font-size: 62px; line-height: 1.15; font-weight: 900;
+    color: var(--c-text); max-width: 600px;
+  }
+  .summary {
+    position: absolute; left: 145px; top: 545px;
+    font-size: 17px; line-height: 1.6; font-weight: 400;
+    color: var(--c-text); opacity: 0.85;
+    max-width: 476px;
+  }
+  .meta {
+    position: absolute; left: 145px; top: 842px;
+    font-size: 18px; line-height: 1.7; color: var(--c-text);
+  }
+  .meta .label { color: var(--c-muted); font-size: 14px; letter-spacing: 1.5px; text-transform: uppercase; }
+  .footer {
+    position: absolute; left: 145px; top: 1013px;
+    font-size: 15px; color: var(--c-muted); letter-spacing: 2px;
+    text-transform: uppercase; opacity: 0.7;
+  }
+  @page { size: 794px 1123px; margin: 0; }
+  @media screen {
+    html { height: auto; display: flex; justify-content: center; background: #e5e5e5; }
+    body { transform-origin: top center; scale: min(1, calc(100vh / 1123px)); margin: 0 auto; }
+  }
+</style>
+</head>
+<body>
+<div class="cover-page">
+  <div class="layer1"></div>
+  <div class="layer2">
+    <div class="anchor-line"></div>
+  </div>
+  <div class="layer3">
+    <div class="kicker" style="max-width:600px;">Laporan Bug Bounty &middot; Edisi Ronde 3 &middot; Tiga Ronde</div>
+    <div class="hero">BAKWAN<br>FIGHT BACK</div>
+    <div class="summary">
+      Hasil audit tiga ronde terhadap game beta &ldquo;Bakwan Fight Back&rdquo; di bakwan.id/game.
+      Ronde 1 (tanpa akun): panel admin tanpa auth, bypass gerbang, loop reCAPTCHA.
+      Ronde 2 (akun resmi): ranked vs pemain asli, verifikasi Elo, gacha, checkout Xendit error.
+      Ronde 3 (build play.bakwan.id): downtime WD_SCHEMA_DOES_NOT_EXIST, bot sempurna via hook
+      debug BFB_DEBUG (10W beruntun, Elo 165), 14 probe API ditolak server baru, BUG-10 terbukti
+      perbaikan, dan analisis ekonomi gacha: Karis &asymp;70 tarikan &mdash; mustahil tanpa top-up.
+    </div>
+    <div class="meta">
+      <span class="label">Penguji</span><br>
+      Tim QA &mdash; Z.ai Agent &middot; Akun audit: vameb61409 (disediakan panitia)<br>
+      <span class="label">Tanggal Pengujian</span><br>
+      24&ndash;25 Oktober 2026 &middot; 12 temuan &middot; 5 kritis
+    </div>
+    <div class="footer">bakwan.id/game &middot; Bug Bounty 7 Hari</div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,5 @@
+__pycache__/
+*.pyc
+auth_state.json
+mail_session.json
+*.token

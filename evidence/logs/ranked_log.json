@@ -1,0 +1,65 @@
+[
+ {
+  "mode": "ranked",
+  "dealt": 1256,
+  "perfects": 31,
+  "hits": 31,
+  "bombed": 0,
+  "elo": [
+   44,
+   72
+  ],
+  "bakwan": [
+   20,
+   20
+  ],
+  "wl": [
+   1,
+   5,
+   2,
+   5
+  ]
+ },
+ {
+  "mode": "ranked",
+  "dealt": 1310,
+  "perfects": 32,
+  "hits": 32,
+  "bombed": 0,
+  "elo": [
+   72,
+   94
+  ],
+  "bakwan": [
+   20,
+   20
+  ],
+  "wl": [
+   2,
+   5,
+   3,
+   5
+  ]
+ },
+ {
+  "mode": "ranked",
+  "dealt": 1195,
+  "perfects": 28,
+  "hits": 28,
+  "bombed": 0,
+  "elo": [
+   94,
+   72
+  ],
+  "bakwan": [
+   20,
+   20
+  ],
+  "wl": [
+   3,
+   5,
+   3,
+   6
+  ]
+ }
+]

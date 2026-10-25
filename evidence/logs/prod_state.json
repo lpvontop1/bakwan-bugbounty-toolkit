@@ -1,0 +1,632 @@
+{
+ "bootstrap_keys": [
+  "announcement",
+  "cfgRev",
+  "config",
+  "dailyLogin",
+  "forceReloadAt",
+  "isAdmin",
+  "owned",
+  "player",
+  "serverNow"
+ ],
+ "config": {
+  "version": 1,
+  "build": "20261025-130337",
+  "startElo": 100,
+  "startBakwan": 100,
+  "ranks": [
+   {
+    "min": 0,
+    "max": 200,
+    "name": "Murid Baru",
+    "color": "#9aa4b2"
+   },
+   {
+    "min": 201,
+    "max": 500,
+    "name": "Murid Normal",
+    "color": "#4fc3f7"
+   },
+   {
+    "min": 501,
+    "max": 1000,
+    "name": "Murid Nakal",
+    "color": "#7bd88f"
+   },
+   {
+    "min": 1001,
+    "max": 1500,
+    "name": "Preman Sekolah",
+    "color": "#ffb74d"
+   },
+   {
+    "min": 1501,
+    "max": 2000,
+    "name": "Pentolan Sekolah",
+    "color": "#ff6b5b"
+   },
+   {
+    "min": 2001,
+    "max": 4999,
+    "name": "Jagoan Sekolah",
+    "color": "#ffd54f"
+   },
+   {
+    "min": 5000,
+    "max": 999999,
+    "name": "Legenda Sekolah",
+    "color": "#ff5cf0"
+   }
+  ],
+  "specialTags": {
+   "Pemain BFB": "#ff9f1c",
+   "ADMIN": "#FF0000"
+  },
+  "teladan": {
+   "name": "Murid Teladan",
+   "color": "#f2e9ff",
+   "top": 5,
+   "minWins": 1
+  },
+  "botTagColor": "#c792ea",
+  "elo": {
+   "kRanked": 40,
+   "kBot": 20,
+   "floor": 0,
+   "botAfterSec": 20,
+   "windowStart": 150,
+   "windowGrowPerSec": 25
+  },
+  "match": {
+   "durationMs": 90000,
+   "countdownMs": 4000,
+   "maxOnScreen": 5,
+   "lateMs": 260,
+   "shapeLifeMs": 2600
+  },
+  "bomb": {
+   "enabled": true,
+   "firstMs": 5000,
+   "gapMinMs": 4500,
+   "gapMaxMs": 8500,
+   "selfPct": 6
+  },
+  "timing": {
+   "perfect": 70,
+   "great": 140,
+   "good": 230,
+   "earlyMiss": 450
+  },
+  "mult": {
+   "perfect": 1,
+   "great": 0.75,
+   "good": 0.5,
+   "ok": 0.25,
+   "miss": 0
+  },
+  "combo": {
+   "perStep": 0.02,
+   "maxSteps": 15
+  },
+  "level": {
+   "max": 50,
+   "xpBase": 100,
+   "xpStep": 20,
+   "statPerLevel": 0.03,
+   "skillTierLevels": [
+    30,
+    40,
+    50
+   ],
+   "skillTierBonus": 0.25
+  },
+  "speed": {
+   "apprMaxMs": 1500,
+   "gapMs": 720
+  },
+  "comeback": {
+   "fullGap": 0.5,
+   "dmgBonusPct": 35,
+   "apprFastMs": 750
+  },
+  "skillSlots": [
+   {
+    "shape": "rect",
+    "unlock": 10
+   },
+   {
+    "shape": "tri",
+    "unlock": 20
+   }
+  ],
+  "rewards": {
+   "xpWin": 60,
+   "xpLose": 25,
+   "xpDraw": 40,
+   "xpTrain": 10,
+   "trainCooldownSec": 60,
+   "xpFriendly": 15,
+   "dupXp": 200
+  },
+  "daily": {
+   "tzOffsetMin": 420,
+   "login": 5,
+   "firstRanked": 15,
+   "firstTrain": 10,
+   "trainMinHits": 20
+  },
+  "friends": {
+   "max": 100,
+   "challengeTimeoutSec": 30,
+   "onlineWindowSec": 75
+  },
+  "store": {
+   "currency": "IDR",
+   "topups": [
+    {
+     "bakwan": 100,
+     "id": "b100",
+     "label": "Sepiring Bakwan [Diskon 33%]",
+     "price": 5000
+    },
+    {
+     "bakwan": 550,
+     "id": "b550",
+     "label": "Sebakul Bakwan [Diskon 33%]",
+     "price": 25000
+    },
+    {
+     "bakwan": 1200,
+     "id": "b1200",
+     "label": "Segerobak Bakwan [Diskon 33%]",
+     "price": 50000
+    }
+   ],
+   "gacha": {
+    "single": 100,
+    "ten": 900,
+    "rates": {
+     "common": 60,
+     "rare": 30,
+     "legendary": 10
+    }
+   },
+   "items": [
+    {
+     "id": "xpS",
+     "name": "Botol XP Kecil",
+     "xp": 100,
+     "price": 50
+    },
+    {
+     "id": "xpL",
+     "name": "Botol XP Besar",
+     "xp": 600,
+     "price": 250
+    }
+   ]
+  },
+  "rarities": {
+   "starter": {
+    "label": "Starter",
+    "color": "#9aa4b2",
+    "hp": 1000,
+    "atk": 38,
+    "def": 18
+   },
+   "common": {
+    "label": "Common",
+    "color": "#7bd88f",
+    "hp": 1000,
+    "atk": 40,
+    "def": 20
+   },
+   "rare": {
+    "label": "Rare",
+    "color": "#4fc3f7",
+    "hp": 1050,
+    "atk": 43,
+    "def": 22
+   },
+   "legendary": {
+    "label": "Legendary",
+    "color": "#ffd54f",
+    "hp": 1100,
+    "atk": 46,
+    "def": 25
+   }
+  },
+  "skills": {
+   "smash": {
+    "name": "Bakwan Smash",
+    "type": "damage",
+    "power": 3,
+    "desc": "Lempar bakwan panas! ATK x3"
+   },
+   "lempar": {
+    "name": "Lempar Penghapus",
+    "type": "damage",
+    "power": 2.6,
+    "desc": "Penghapus terbang! ATK x2.6"
+   },
+   "contek": {
+    "name": "Contekan Kilat",
+    "type": "drain",
+    "power": 2.2,
+    "desc": "ATK x2.2, pulihkan 50%"
+   },
+   "kantin": {
+    "name": "Istirahat Kantin",
+    "type": "heal",
+    "power": 12,
+    "desc": "Pulihkan 12% HP"
+   },
+   "tas": {
+    "name": "Tas Perisai",
+    "type": "shield",
+    "power": 50,
+    "dur": 5000,
+    "desc": "Tahan 50% damage, 5 dtk"
+   },
+   "semangat": {
+    "name": "Semangat 45",
+    "type": "rage",
+    "power": 40,
+    "dur": 6000,
+    "desc": "+40% damage, 6 dtk"
+   }
+  },
+  "characters": [
+   {
+    "id": "botak",
+    "name": "Botak",
+    "school": "Murid Baru",
+    "rarity": "starter",
+    "skin": "botak",
+    "skills": [
+     "smash",
+     "kantin"
+    ]
+   },
+   {
+    "id": "peywish",
+    "name": "Kai",
+    "school": "SMA Dirgantara",
+    "rarity": "common",
+    "skin": "Peywish",
+    "skills": [
+     "smash",
+     "kantin"
+    ]
+   },
+   {
+    "id": "exelicks",
+    "name": "Adrian",
+    "school": "SMA Dirgantara",
+    "rarity": "common",
+    "skin": "Exelicks",
+    "skills": [
+     "smash",
+     "tas"
+    ]
+   },
+   {
+    "id": "muemuechan",
+    "name": "Klara",
+    "school": "SMA Dirgantara",
+    "rarity": "common",
+    "skin": "MueMueChan",
+    "skills": [
+     "lempar",
+     "kantin"
+    ]
+   },
+   {
+    "id": "veradinita",
+    "name": "Alana",
+    "school": "SMA Dirgantara",
+    "rarity": "common",
+    "skin": "VeraDinita",
+    "skills": [
+     "lempar",
+     "kantin"
+    ]
+   },
+   {
+    "id": "anya",
+    "name": "Anya",
+    "school": "SMA Dirgantara",
+    "rarity": "common",
+    "skin": "Anya",
+    "skills": [
+     "lempar",
+     "semangat"
+    ]
+   },
+   {
+    "id": "presiden",
+    "name": "Arshaka",
+    "school": "SMA Pelitaraya",
+    "rarity": "common",
+    "skin": "Presiden",
+    "skills": [
+     "smash",
+     "semangat"
+    ]
+   },
+   {
+    "id": "dai",
+    "name": "Ian",
+    "school": "SMA Pelitaraya",
+    "rarity": "common",
+    "skin": "Dai",
+    "skills": [
+     "lempar",
+     "semangat"
+    ]
+   },
+   {
+    "id": "aliaadelia",
+    "name": "Adela",
+    "school": "SMA Pelitaraya",
+    "rarity": "common",
+    "skin": "AliaAdelia",
+    "skills": [
+     "contek",
+     "tas"
+    ]
+   },
+   {
+    "id": "arethakirana",
+    "name": "Agatha",
+    "school": "SMA Pelitaraya",
+    "rarity": "common",
+    "skin": "ArethaKirana",
+    "skills": [
+     "lempar",
+     "kantin"
+    ]
+   },
+   {
+    "id": "teguhsugianto",
+    "name": "Raka",
+    "school": "SMA Pelitaraya",
+    "rarity": "common",
+    "skin": "TeguhSugianto",
+    "skills": [
+     "smash",
+     "kantin"
+    ]
+   },
+   {
+    "id": "jelllykukis",
+    "name": "Niko",
+    "school": "SMA Dirgantara",
+    "rarity": "rare",
+    "skin": "JelllyKukis",
+    "skills": [
+     "contek",
+     "semangat"
+    ]
+   },
+   {
+    "id": "rolfeey",
+    "name": "Bintang",
+    "school": "SMA Dirgantara",
+    "rarity": "rare",
+    "skin": "Rolfeey",
+    "skills": [
+     "smash",
+     "tas"
+    ]
+   },
+   {
+    "id": "moend",
+    "name": "Medi",
+    "school": "SMA Dirgantara",
+    "rarity": "rare",
+    "skin": "Moend",
+    "skills": [
+     "lempar",
+     "semangat"
+    ]
+   },
+   {
+    "id": "haze",
+    "name": "Jeje",
+    "school": "SMA Dirgantara",
+    "rarity": "rare",
+    "skin": "Haze",
+    "skills": [
+     "contek",
+     "kantin"
+    ]
+   },
+   {
+    "id": "otodamsh",
+    "name": "Adnan",
+    "school": "SMA Pelitaraya",
+    "rarity": "rare",
+    "skin": "Otodamsh",
+    "skills": [
+     "lempar",
+     "tas"
+    ]
+   },
+   {
+    "id": "frederett",
+    "name": "Rere",
+    "school": "SMA Pelitaraya",
+    "rarity": "rare",
+    "skin": "Frederett",
+    "skills": [
+     "smash",
+     "kantin"
+    ]
+   },
+   {
+    "id": "shanon",
+    "name": "Selena",
+    "school": "SMA Pelitaraya",
+    "rarity": "rare",
+    "skin": "Shanon",
+    "skills": [
+     "smash",
+     "tas"
+    ]
+   },
+   {
+    "id": "kazera",
+    "name": "Langit",
+    "school": "SMA Dirgantara",
+    "rarity": "legendary",
+    "skin": "Kazera",
+    "skills": [
+     "smash",
+     "semangat"
+    ]
+   },
+   {
+    "id": "beaconcream",
+    "name": "Karis",
+    "school": "SMA Dirgantara",
+    "rarity": "legendary",
+    "skin": "BeaconCream",
+    "skills": [
+     "contek",
+     "tas"
+    ]
+   },
+   {
+    "id": "yoo0",
+    "name": "Pak Yoo",
+    "school": "SMA Dirgantara",
+    "rarity": "legendary",
+    "skin": "yoo0",
+    "skills": [
+     "lempar",
+     "tas"
+    ]
+   },
+   {
+    "id": "odokentang",
+    "name": "Odo Satoru",
+    "school": "SMA Pelitaraya",
+    "rarity": "legendary",
+    "skin": "OdoKentang",
+    "skills": [
+     "contek",
+     "semangat"
+    ]
+   },
+   {
+    "id": "mefelz",
+    "name": "Bhima",
+    "school": "SMA Pelitaraya",
+    "rarity": "legendary",
+    "skin": "Mefelz",
+    "skills": [
+     "contek",
+     "kantin"
+    ]
+   },
+   {
+    "id": "shinon",
+    "name": "Selina",
+    "school": "SMA Pelitaraya",
+    "rarity": "legendary",
+    "skin": "Shinon",
+    "skills": [
+     "lempar",
+     "semangat"
+    ]
+   },
+   {
+    "id": "gurufadil",
+    "name": "Pak Matthias",
+    "school": "SMA Pelitaraya",
+    "rarity": "legendary",
+    "skin": "Guru Fadil",
+    "skills": [
+     "contek",
+     "tas"
+    ]
+   }
+  ],
+  "botNames": [
+   "Asep_Gaming",
+   "UcupPro",
+   "Rizky99",
+   "DindaXD",
+   "MasJajang",
+   "TehNurul",
+   "Kevin_GG",
+   "Rara.exe",
+   "Bayu007",
+   "Fajar_Ngebut",
+   "NadiaKece",
+   "GilangGG",
+   "PutriJutek",
+   "DimasBakwan",
+   "Otong_Sakti",
+   "Cici_Cireng",
+   "Bang_Jago",
+   "IpinUpin",
+   "Sopo_Jarwo",
+   "Mamang_Tahu"
+  ]
+ },
+ "player": {
+  "friendCode": "9VQ9F7",
+  "name": "vameb61409",
+  "elo": 73,
+  "peakElo": 100,
+  "rank": "Murid Baru",
+  "tags": [
+   {
+    "t": "Murid Baru",
+    "c": "#9aa4b2"
+   }
+  ],
+  "bakwan": 20,
+  "items": {},
+  "selectedChar": "arethakirana",
+  "wins": 0,
+  "losses": 2,
+  "draws": 0,
+  "specialTag": "",
+  "daily": {
+   "login": true,
+   "ranked": true,
+   "train": false,
+   "amounts": {
+    "login": 5,
+    "ranked": 15,
+    "train": 10
+   },
+   "resetInMs": 37835663
+  }
+ },
+ "owned": {
+  "botak": {
+   "xp": 50,
+   "level": 1,
+   "into": 50,
+   "need": 100,
+   "max": false
+  },
+  "arethakirana": {
+   "xp": 0,
+   "level": 1,
+   "into": 0,
+   "need": 100,
+   "max": false
+  }
+ },
+ "dailyLogin": 0,
+ "announcement": "Update Battle & sistem ELO baru!\nBakwan diskon 33% sampai akhir bulan ini! (semoga ada lebih dari $12 buat bayar server coy T_T -Nelson).",
+ "isAdmin": false,
+ "cfgRev": 12,
+ "relay": null
+}

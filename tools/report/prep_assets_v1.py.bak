@@ -1,0 +1,54 @@
+#!/usr/bin/env python3
+"""Prepare optimized JPEG assets for the bug bounty PDF report."""
+import os
+from PIL import Image
+
+SRC = "/home/z/my-project/download/screenshots"
+DST = "/home/z/my-project/scripts/report_assets"
+os.makedirs(DST, exist_ok=True)
+
+# (source, output_name)
+picks = [
+    ("02_game_page_scrolled.png",   "gate_login.jpg"),
+    ("06_after_signup_click.png",   "captcha_checkbox.jpg"),
+    ("09_captcha_next.png",         "captcha_challenge.jpg"),
+    ("11_after_captcha_verify.png", "captcha_expired.jpg"),
+    ("89_game_direct.png",          "bypass_maindemo.jpg"),
+    ("90_demo_game.png",            "menu_utama.jpg"),
+    ("92_ADMIN_PANEL.png",          "admin_ringkasan.jpg"),
+    ("93_ADMIN_PEMAIN.png",         "admin_pemain.jpg"),
+    ("95_ADMIN_PENGATURAN.png",     "admin_pengaturan.jpg"),
+    ("98_ADMIN_LOG.png",            "admin_log.jpg"),
+    ("99_LATIHAN.png",              "latihan_countdown.jpg"),
+    ("100_latihan_start.png",       "latihan_gameplay.jpg"),
+    ("101_hit_attempt.png",         "latihan_boom.jpg"),
+    ("104_latihan_result.png",      "latihan_hasil.jpg"),
+    ("123_RANKED_MATCH.png",        "ranked_match.jpg"),
+    ("125_hit4.png",                "ranked_bomb.jpg"),
+    ("126_KO_RESULT.png",           "ranked_kalah.jpg"),
+    ("111_STORE.png",               "store_gacha.jpg"),
+    ("113_GACHA_PULL.png",          "gacha_hasil.jpg"),
+    ("114_TOPUP.png",               "topup_paket.jpg"),
+    ("115_TOPUP_FLOW.png",          "topup_demo.jpg"),
+    ("120_KARAKTER.png",            "karakter.jpg"),
+    ("127_LEADERBOARD.png",         "leaderboard.jpg"),
+    ("128_RIWAYAT.png",             "profil.jpg"),
+    ("132_TEMAN.png",               "teman.jpg"),
+]
+
+total = 0
+for src, dst in picks:
+    p = os.path.join(SRC, src)
+    if not os.path.exists(p):
+        print("MISSING:", src)
+        continue
+    img = Image.open(p).convert("RGB")
+    if img.width > 1100:
+        ratio = 1100 / img.width
+        img = img.resize((1100, int(img.height * ratio)), Image.LANCZOS)
+    out = os.path.join(DST, dst)
+    img.save(out, "JPEG", quality=86, optimize=True)
+    kb = os.path.getsize(out) / 1024
+    total += kb
+    print(f"{dst:28s} {kb:7.0f} KB")
+print(f"TOTAL: {total/1024:.1f} MB, {len(picks)} files")
